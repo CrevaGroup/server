@@ -5,3 +5,5 @@ const postServiceController = async (serviceInfo) => {
     if (created) return service;
     else throw new Error ('Ya existe un servicio con ese nombre.')
 }
+
+module.exports = postServiceController;
