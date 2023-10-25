@@ -12,7 +12,11 @@ module.exports = (sequelize)=>{
             allowNull:false,
         },
         assessment: {
-            types: DataTypes.ENUM('1', '2', '3', '4', '5'),
+            type: DataTypes.INTEGER,
+            validate: {
+                min: 0,
+                max: 5
+            },
             allowNull:false,
         }
     }, { paranoid: true })

@@ -1,7 +1,7 @@
 const { Review } = require('../../db');
 
 const postReviewController = async (reviewInfo) => {
-    const review = await Review.create({default: {...reviewInfo}})
+    const review = await Review.create({...reviewInfo})
     return review;
 }
 
