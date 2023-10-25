@@ -3,7 +3,6 @@ const postReviewController = require('../../Controllers/reviewControllers/postRe
 const postReviewHandler = async (req, res) => {
     try {
         const reviewInfo = req.body
-        console.log(reviewInfo);
         const response = await postReviewController(reviewInfo);
         res.status(201).json(response);
     } catch (error) {
