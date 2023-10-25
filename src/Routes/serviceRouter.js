@@ -1,6 +1,6 @@
 const Router = require('express');
 
-const URL = '../Handlers/serviceHandlers'
+const URL = '../Handlers/serviceHandlers/'
 
 const postServiceHandler = require(URL + 'postServiceHandler');
 

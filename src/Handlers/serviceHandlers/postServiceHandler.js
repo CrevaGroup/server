@@ -1,4 +1,4 @@
-const postServiceController = require('../../Controllers/postServiceController');
+const postServiceController = require('../../Controllers/serviceControllers/postServiceController');
 
 const postServiceHandler = async (req, res) => {
     try {
