@@ -2,7 +2,7 @@ const deleteServiceController = require('../../Controllers/serviceControllers/de
 
 const deleteServiceHandler = async (req, res) => {
     try {
-        const { id } = req.query;
+        const { id } = req.params;
         const response = await deleteServiceController(id);
         res.status(200).json(response);
     } catch (err) {
