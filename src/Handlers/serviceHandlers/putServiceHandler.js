@@ -2,8 +2,8 @@ const putServiceController = require('../../Controllers/serviceControllers/putSe
 
 const putServiceHandler = async (req, res) => {
     try {
-        const info = req.body;
-        const response = await putServiceController(info);
+        const serviceInfo = req.body;
+        const response = await putServiceController(serviceInfo);
         res.status(200).json(response);
     } catch (err) {
         res.status(400).json(err.message);
