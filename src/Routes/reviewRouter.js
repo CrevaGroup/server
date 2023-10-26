@@ -12,6 +12,6 @@ const reviewRouter = Router();
 reviewRouter.post('/', postReviewHandler);
 reviewRouter.get('/', getReviewHandler);
 reviewRouter.put('/', putReviewHandler);
-reviewRouter.delete('/', deleteReviewHandler);
+reviewRouter.delete('/:id', deleteReviewHandler);
 
 module.exports = reviewRouter
