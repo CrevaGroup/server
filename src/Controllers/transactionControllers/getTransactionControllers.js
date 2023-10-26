@@ -1,7 +1,6 @@
 const {Transaction} = require('../../db')
 
 const getTransactionController = async(id) =>{
-    console.log("controller",id)
     if(id){
         const transaction = await Transaction.findOne({where: {id: id}});
         if(!transaction) throw new Error('No se encontro la transaccion')
