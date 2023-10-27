@@ -1,11 +1,11 @@
 const Router = require('express');
 
-const URL = '../Handlers/userHandlers/'
+const URL = '../Handlers/userHandlers/';
 
-const postUserHandler = URL + 'postUserHandler';
+const postUserHandler = require(URL + 'postUserHandler');
 
 const userRouter = Router();
 
-serviceRouter.post('/', postUserHandler);
+userRouter.post('/', postUserHandler);
 
-module.exports = userRouter
+module.exports = userRouter;
