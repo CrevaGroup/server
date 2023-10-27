@@ -2,7 +2,7 @@ const getUserController = require('../../Controllers/userControllers/getUserCont
 
 const getUserHandler = async (req,res) => {
     try {
-        const { id } = req.params;
+        const { id } = req.query;
         const response = await getUserController(id);
         res.status(200).json(response);
     } catch (err) {
