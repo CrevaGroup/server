@@ -9,7 +9,10 @@ const postUserController = async (userInfo) => {
 
     const [user, created] = await User.findOrCreate({ where: { id: userInfo.id }, defaults: { ...userInfo } })
     if (!created) throw new Error ('El email ya se encuentra registrado.')
-    return user;
+    return {
+        ...user,
+        access: true
+    };
 }
 
 module.exports = postUserController;
