@@ -13,19 +13,23 @@ module.exports = (sequelize)=>{
         fullName: {
             type: DataTypes.STRING,
             allowNull: false,
+            validate: {
+                len: [4]
+            }
         },
         email: {
             type: DataTypes.STRING,
             allowNull: false,
-            isEmail: true,
-            unique: true
-        },
-        password: {
-            type: DataTypes.STRING,
-            allowNull: false,
+            unique: true,
+            validate: {
+                isEmail: true
+            }
         },
         age: {
             type: DataTypes.INTEGER,
+            validate: {
+                min: 18
+            }
         }
     }, {paranoid: true})
 }
