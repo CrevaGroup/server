@@ -11,11 +11,7 @@ module.exports = (sequelize)=>{
             type: DataTypes.BOOLEAN,
             defaultValue: false,
         },
-        name: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        lastName: {
+        fullName: {
             type: DataTypes.STRING,
             allowNull: false,
         },
