@@ -25,12 +25,12 @@ const {
 } = sequelize.models;
 
 //! define associations
-User.hasMany(Review);
-Review.belongsTo(User);
-User.hasMany(Transaction);
-Transaction.belongsTo(User);
-Service.hasMany(Review);
-Review.belongsTo(Service);
+User.hasMany(Review, {as: "reviews", foreignKey: "userId"});
+Review.belongsTo(User, {as: "user"});
+User.hasMany(Transaction, {as: "buys", foreignKey: "userId"});
+Transaction.belongsTo(User, {as: "user"});
+Service.hasMany(Review, {as: "reviews", foreignKey: "serviceId"});
+Review.belongsTo(Service, {as: "service"});
 Service.belongsToMany(Transaction, { through: 'Services_Transactions' });
 Transaction.belongsToMany(Service, { through: 'Services_Transactions' });
 
