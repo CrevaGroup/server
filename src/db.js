@@ -25,6 +25,14 @@ const {
 } = sequelize.models;
 
 //! define associations
+User.hasMany(Review);
+Review.belongsTo(User);
+User.hasMany(Transaction);
+Transaction.belongsTo(User);
+Service.hasMany(Review);
+Review.belongsTo(Service);
+Service.belongsToMany(Transaction, { through: 'Services_Transactions' });
+Transaction.belongsToMany(Service, { through: 'Services_Transactions' });
 
 module.exports = {
     ...sequelize.models,
