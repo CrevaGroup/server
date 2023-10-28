@@ -1,8 +1,17 @@
-const { Review } = require('../../db')
+const { Review, User, Service } = require('../../db')
 
 const getReviewController = async(id) => {
     if (id) {
-        const review = await Review.findOne({where: {id: id}});
+        const review = await Review.findOne({
+            where: {id: id},
+            include: [{
+                model: User,
+                as: "user"
+            },{
+                model: Service,
+                as: "service"
+            }]
+        });
         if(!review) throw new Error('No se encuentra la review solicitada')
         return review;
     }
