@@ -2,8 +2,8 @@ const getServiceController = require('../../Controllers/serviceControllers/getSe
 
 const getServiceHandler = async (req, res) => {
     try {
-        const { id } = req.query;
-        const response = await getServiceController(id);
+        const { id, order, min, max } = req.query;
+        const response = await getServiceController(id, order, min, max);
         res.status(200).json(response);
     } catch (err) {
         res.status(404).json(err.message);
