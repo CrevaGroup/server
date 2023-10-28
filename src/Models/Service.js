@@ -19,6 +19,11 @@ module.exports = (sequelize)=>{
         price: {    // define currency (usd / ars)
             type: DataTypes.INTEGER,
             allowNull: false,
+        },
+        photo: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            defaultValue: 'https://cdn-icons-png.flaticon.com/512/3736/3736489.png'
         }
     }, { paranoid: true })
 }
