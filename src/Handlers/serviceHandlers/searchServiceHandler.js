@@ -5,7 +5,7 @@ const searchServiceHandler = async (req, res) => {
         const { input } = req.body;
         const response = await searchServiceController(input);
         res.status(200).json(response);
-    } catch (err) {
+    } catch (err) { 
         res.status(404).json(err.message);
     }
 }
