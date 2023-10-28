@@ -16,13 +16,16 @@ module.exports = (sequelize)=>{
             type: DataTypes.TEXT,
             allowNull: false,
         },
-        price: {    // define currency (usd / ars)
+        price: {
             type: DataTypes.INTEGER,
             allowNull: false,
         },
+        keyWord: {
+            type: DataTypes.ENUM('cv', 'perfil', 'practica', 'busqueda'),
+            allowNull: false
+        },
         photo: {
             type: DataTypes.STRING,
-            allowNull: false,
             defaultValue: 'https://res.cloudinary.com/dk4amlgtk/image/upload/v1698452423/wl2rucr4t8h4pyq8b6w0.png'
         }
     }, { paranoid: true })
