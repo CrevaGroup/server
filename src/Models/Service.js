@@ -19,6 +19,11 @@ module.exports = (sequelize)=>{
         price: {    // define currency (usd / ars)
             type: DataTypes.INTEGER,
             allowNull: false,
+        },
+        photo: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            defaultValue: 'https://res.cloudinary.com/dk4amlgtk/image/upload/v1698452423/wl2rucr4t8h4pyq8b6w0.png'
         }
     }, { paranoid: true })
 }
