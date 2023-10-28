@@ -23,7 +23,7 @@ module.exports = (sequelize)=>{
         photo: {
             type: DataTypes.STRING,
             allowNull: false,
-            defaultValue: 'https://cdn-icons-png.flaticon.com/512/3736/3736489.png'
+            defaultValue: 'https://res.cloudinary.com/dk4amlgtk/image/upload/v1698452423/wl2rucr4t8h4pyq8b6w0.png'
         }
     }, { paranoid: true })
 }

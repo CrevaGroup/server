@@ -3,7 +3,6 @@ const titleCase = require('../../Utils/titleCase');
 const cloudinary = require('../../cloudinary')
 
 const postServiceController = async (serviceInfo) => {
-    console.log(serviceInfo);
     serviceInfo = {
         ...serviceInfo,
         name: await titleCase(serviceInfo.name),
