@@ -1,4 +1,4 @@
-const { Service } = require('../../db');
+const { Service, Type } = require('../../db');
 const titleCase = require('../../Utils/titleCase');
 
 const putServiceController = async (serviceInfo) => {
@@ -9,8 +9,14 @@ const putServiceController = async (serviceInfo) => {
         if (serviceInfo[property] && service.dataValues.hasOwnProperty(property))
         service[property] = serviceInfo[property];
     }
-
     await service.save();
+
+    await service.setTypes([]);
+
+    serviceInfo.types.forEach(async name => {
+        const type = await Type.findOne({ where: { name: titleCase(name) } });
+        await service.addType(type);
+    });
 
     return service;
 }

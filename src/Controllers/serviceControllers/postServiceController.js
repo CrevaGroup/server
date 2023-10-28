@@ -1,6 +1,6 @@
-const { Service } = require('../../db');
+const { Service, Type } = require('../../db');
 const titleCase = require('../../Utils/titleCase');
-const cloudinary = require('../../cloudinary')
+const cloudinary = require('../../cloudinary');
 
 const postServiceController = async (serviceInfo) => {
     serviceInfo = {
@@ -9,8 +9,13 @@ const postServiceController = async (serviceInfo) => {
         photo: (await cloudinary.uploader.upload(serviceInfo.photo)).secure_url
     };
     const [service, created] = await Service.findOrCreate({ where: { name: serviceInfo.name }, defaults:{ ...serviceInfo } });
-    if (created) return service;
-    else throw new Error ('Ya existe un servicio con ese nombre.')
+    if (created) {
+        serviceInfo.types.forEach(async name => {
+            const type = await Type.findOne({ where: { name: titleCase(name) } });
+            await service.addType(type);
+        });
+        return service;
+    } else throw new Error ('Ya existe un servicio con ese nombre.');
 }
 
 module.exports = postServiceController;
