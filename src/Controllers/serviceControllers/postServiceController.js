@@ -8,10 +8,10 @@ const postServiceController = async (serviceInfo) => {
     
     const [service, created] = await Service.findOrCreate({ where: { name: serviceInfo.name }, defaults:{ ...serviceInfo } });
     if (created) {
-        serviceInfo.types.forEach(async name => {
+        for (let name of serviceInfo.types) {
             const type = await Type.findOne({ where: { name: titleCase(name) } });
             await service.addType(type);
-        });
+        };
         return service;
     } else throw new Error ('Ya existe un servicio con ese nombre.');
 }

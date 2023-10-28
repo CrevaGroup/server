@@ -13,10 +13,10 @@ const putServiceController = async (serviceInfo) => {
 
     await service.setTypes([]);
 
-    serviceInfo.types.forEach(async name => {
+    for (let name of serviceInfo.types) {
         const type = await Type.findOne({ where: { name: titleCase(name) } });
         await service.addType(type);
-    });
+    };
 
     return service;
 }
