@@ -4,6 +4,7 @@ const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME } = process.env;
 
 //Models
 const userModel = require('./Models/User')
+const typeModel = require('./Models/Type')
 const reviewModel = require('./Models/Review')
 const serviceModel = require('./Models/Service')
 const transactionModel = require('./Models/Transaction')
@@ -13,12 +14,14 @@ const sequelize = new Sequelize(
     { logging: false, native: false });
 
 userModel(sequelize);
+typeModel(sequelize);
 reviewModel(sequelize);
 serviceModel(sequelize);
 transactionModel(sequelize);
 
 const {
     User,
+    Type,
     Review,
     Service,
     Transaction
@@ -33,6 +36,8 @@ Service.hasMany(Review, {as: "reviews", foreignKey: "serviceId"});
 Review.belongsTo(Service, {as: "service"});
 Service.belongsToMany(Transaction, { through: 'Services_Transactions' });
 Transaction.belongsToMany(Service, { through: 'Services_Transactions' });
+Service.belongsToMany(Type, { through: 'Services_Types' });
+Type.belongsToMany(Service, { through: 'Services_Types' });
 
 module.exports = {
     ...sequelize.models,
