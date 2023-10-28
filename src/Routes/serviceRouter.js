@@ -14,6 +14,6 @@ serviceRouter.get('/', getServiceHandler);
 serviceRouter.put('/', putServiceHandler);
 serviceRouter.post('/', postServiceHandler);
 serviceRouter.delete('/:id', deleteServiceHandler);
-serviceRouter.get('/search', getSearchServiceHandler);
+serviceRouter.post('/search', getSearchServiceHandler);
 
 module.exports = serviceRouter;
