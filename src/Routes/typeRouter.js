@@ -10,6 +10,6 @@ const typeRouter = Router();
 
 typeRouter.get('/', getTypehandler);
 typeRouter.post('/', postTypeHandler);
-typeRouter.delete('/:id', deleteTypeHandler);
+typeRouter.delete('/:name', deleteTypeHandler);
 
 module.exports = typeRouter;
