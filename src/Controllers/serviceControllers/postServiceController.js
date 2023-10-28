@@ -3,11 +3,9 @@ const titleCase = require('../../Utils/titleCase');
 const cloudinary = require('../../cloudinary');
 
 const postServiceController = async (serviceInfo) => {
-    serviceInfo = {
-        ...serviceInfo,
-        name: await titleCase(serviceInfo.name),
-        photo: (await cloudinary.uploader.upload(serviceInfo.photo)).secure_url
-    };
+    if (serviceInfo.photo) serviceInfo.photo = (await cloudinary.uploader.upload(serviceInfo.photo)).secure_url;
+    if (serviceInfo.name) serviceInfo.name = titleCase(serviceInfo.name);
+    
     const [service, created] = await Service.findOrCreate({ where: { name: serviceInfo.name }, defaults:{ ...serviceInfo } });
     if (created) {
         serviceInfo.types.forEach(async name => {
