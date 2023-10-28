@@ -6,8 +6,8 @@ const queryBuilder = (order, min, max, keyword) => {
     if (max) query = { ...query, where: { price: { [Op.lte]: max } } };
     if (min && max) query = { ...query, where: { price: { [Op.between]: [min, max] } } };
 
-    if (keyword) query = { ...query, where: { keyWord: { [Op.contains]: ['cv'] } } }
-    if (keyword && min && max) query = { ...query, where: { ...query.where, keyWord: { [Op.contains]: ['cv'] } } }
+    // if (keyword) query = { ...query, where: { keyWord: { [Op.contains]: ['cv'] } } }
+    // if (keyword && min && max) query = { ...query, where: { ...query.where, keyWord: { [Op.contains]: ['cv'] } } }
 
     query = { ...query, order: [[ 'price', order ? order : 'ASC' ]]};
     return query;
