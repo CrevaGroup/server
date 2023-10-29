@@ -11,15 +11,15 @@ const googleLoginController = async (userInfo) => {
 
     const [user, created] = await User.findOrCreate({ where: { id: userInfo.id }, defaults: { ...userInfo } });
 
-    // if (created) transporter.sendMail(emailBuilder(user.email, 'Bienvenido', `Te damos la bienvenida a CreVa, ${user.fullName}.`));
+    if (created) transporter.sendMail(emailBuilder(user.email, 'Bienvenid@', `Te damos la bienvenida a Creva, ${user.fullName}.`));
 
     if (!user.age) return {
-        ...user,
+        ...user.dataValues,
         access: true,
         complete: false
     }
     return {
-        ...user,
+        ...user.dataValues,
         access: true,
         complete: true
     }
