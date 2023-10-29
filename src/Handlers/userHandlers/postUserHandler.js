@@ -4,6 +4,7 @@ const googleLoginController = require('../../Controllers/userControllers/googleL
 const postUserHandler = async (req,res) => {
     try {
         const userInfo = req.body;
+        console.log(userInfo);
         const response = userInfo.providerId === 'google.com' ? await googleLoginController(userInfo) : await postUserController(userInfo);
         res.status(201).json(response);
     } catch (err) {
