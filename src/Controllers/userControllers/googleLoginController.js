@@ -29,8 +29,6 @@ const googleLoginController = async (userInfo) => {
         }] 
     })
 
-    console.log(newUser);
-
     if (!newUser.dataValues.age) return {
         ...newUser.dataValues,
         access: true,
