@@ -18,7 +18,8 @@ const BUSQUEDA_MAP = [
 
 const PRACTICA_MAP = [
     'practica',
-    'entrevista'
+    'entrevista',
+    'entrevistas',
 ];
 
 module.exports = {
