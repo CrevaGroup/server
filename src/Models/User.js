@@ -30,6 +30,10 @@ module.exports = (sequelize)=>{
             validate: {
                 min: 18
             }
+        },
+        photo: {
+            type: DataTypes.STRING,
+            defaultValue: 'https://res.cloudinary.com/dk4amlgtk/image/upload/v1698592965/tnrmteyspw3g0gd4ijrh.png'
         }
     }, {paranoid: true})
 }
