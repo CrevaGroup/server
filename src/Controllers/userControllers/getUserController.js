@@ -19,7 +19,7 @@ const getUserController = async (id) => {
             }]
         });
         if (!user) throw new Error('No se encontró el usuario.');
-        if (!user.age) return {
+        if (!user.dataValues.age) return {
             ...user.dataValues,
             access: true,
             complete: false
