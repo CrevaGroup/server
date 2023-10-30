@@ -2,7 +2,6 @@ const { User } = require('../../db');
 const transporter = require('../../nodemailer');
 const titleCase = require('../../Utils/titleCase');
 const emailBuilder = require('../../Utils/emailBuilder');
-const  cloudinary  = require('../../cloudinary');
 
 
 const postUserController = async (userInfo) => {
@@ -11,7 +10,6 @@ const postUserController = async (userInfo) => {
 
     if (!userFinded) {
 
-        if (userInfo.photo) userInfo.photo = (await cloudinary.uploader.upload(userInfo.photo)).secure_url;
         if (userInfo.fullName) userInfo.fullName = titleCase(userInfo.fullName);
 
         const user = await User.create({ ...userInfo });
