@@ -11,7 +11,7 @@ const serviceModel = require('./Models/Service.js')
 const transactionModel = require('./Models/Transaction.js')
 
 const sequelize = new Sequelize(
-    `${POSTGRES_URL}?sslmode=require`,  
+    `${POSTGRES_URL}`,  
     
     { logging: false, native: false, dialect: "postgres", dialectModule: pg });
 
