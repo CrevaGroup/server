@@ -10,7 +10,7 @@ const serviceModel = require('./Models/Service.js')
 const transactionModel = require('./Models/Transaction.js')
 
 const sequelize = new Sequelize(
-    "postgres://default:2sReJUMF5ioT@ep-red-term-57447602.us-east-1.postgres.vercel-storage.com:5432/verceldb",
+    "postgres://default:2sReJUMF5ioT@ep-red-term-57447602.us-east-1.postgres.vercel-storage.com:5432/verceldb?sslmode=require",
     { logging: false, native: false });
 
 userModel(sequelize);
