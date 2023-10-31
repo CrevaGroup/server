@@ -7,10 +7,12 @@
       }
     ],
     "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "./src/Routes/mainRouter.js"
-      }
-    ]
+      {"src": "/(.*)", "dest": "index.js"},
+      {"src": "/user", "dest": "/src/Routes/userRouter.js"},
+      {"src": "/type", "dest": "/src/Routes/typeRouter.js"},
+      {"src": "/review", "dest": "/src/Routes/reviewRouter.js"},
+      {"src": "/service", "dest": "/src/Routes/serviceRouter.js"},
+      {"src": "/transaction", "dest": "/src/Routes/transactionRouter.js"}
+      ]
   }
   
