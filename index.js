@@ -5,8 +5,8 @@ const PORT = process.env.PORT
 
 const startServer = async()=>{
     try {
-    conn.sync({ force: false }).then(()=>{console.log(`Connected to the DB: ${process.env.DB_NAME}`);})
-server.listen(PORT, () => {
+    await conn.sync({ force: false })
+    server.listen(PORT, () => {
     console.log(`Server raised in port: ${PORT}`);
   });
     } catch (error) {
