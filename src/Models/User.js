@@ -3,31 +3,37 @@ const { DataTypes } = require('sequelize');
 module.exports = (sequelize)=>{
     sequelize.define('User', {
         id: {
-            type: DataTypes.UUID,
+            type: DataTypes.STRING,
             primaryKey: true,
-            defaultValue: DataTypes.UUIDV4,
         },
         admin: {
             type: DataTypes.BOOLEAN,
             defaultValue: false,
         },
-        name: {
+        fullName: {
             type: DataTypes.STRING,
             allowNull: false,
-        },
-        lastName: {
-            type: DataTypes.STRING,
-            allowNull: false,
+            validate: {
+                len: [4]
+            }
         },
         email: {
             type: DataTypes.STRING,
             allowNull: false,
-            isEmail: true,
-            unique: true
+            unique: true,
+            validate: {
+                isEmail: true
+            }
         },
-        password: {
+        age: {
+            type: DataTypes.INTEGER,
+            validate: {
+                min: 18
+            }
+        },
+        photo: {
             type: DataTypes.STRING,
-            allowNull: false,
+            defaultValue: 'https://res.cloudinary.com/dk4amlgtk/image/upload/v1698592965/tnrmteyspw3g0gd4ijrh.png'
         }
     }, {paranoid: true})
 }
