@@ -1,7 +1,7 @@
 require("dotenv").config();
 const { Sequelize } = require("sequelize");
 const { pg } = require('pg');
-const { POSTGRES_USER, POSTGRES_PASSWORD, POSTGRES_HOST, POSTGRES_DATABASE, POSTGRES_URL, POSTGRES_URL_NON_POOLING } = process.env;
+const { POSTGRES_URL_NON_POOLING } = process.env;
 
 //Models
 const userModel = require('./Models/User.js')
@@ -11,8 +11,7 @@ const serviceModel = require('./Models/Service.js')
 const transactionModel = require('./Models/Transaction.js')
 
 const sequelize = new Sequelize(
-    `postgres://default:2sReJUMF5ioT@ep-red-term-57447602.us-east-1.postgres.vercel-storage.com:5432/verceldb?sslmode=required`,  
-    
+    `${POSTGRES_URL_NON_POOLING}?sslmode=require`,  
     { logging: false, native: false, dialect: "postgres", dialectModule: pg });
 
 //`postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}/${POSTGRES_DATABASE}?sslmode=require`,
