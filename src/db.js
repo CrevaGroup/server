@@ -11,7 +11,7 @@ const serviceModel = require('./Models/Service.js')
 const transactionModel = require('./Models/Transaction.js')
 
 const sequelize = new Sequelize(
-    `${POSTGRES_URL}`,  
+    `postgres://default:2sReJUMF5ioT@ep-red-term-57447602.us-east-1.postgres.vercel-storage.com:5432/verceldb?sslmode=required`,  
     
     { logging: false, native: false, dialect: "postgres", dialectModule: pg });
 
