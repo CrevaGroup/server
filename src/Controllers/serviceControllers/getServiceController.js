@@ -1,5 +1,5 @@
-const { Service } = require('../../db');
-const queryBuilder = require('../../Utils/queryBuilder');
+const { Service } = require('../../db.js');
+const queryBuilder = require('../../Utils/queryBuilder.js');
 
 const getServiceController = async ({ id, order, min, max, type }) => {
     if (id) {

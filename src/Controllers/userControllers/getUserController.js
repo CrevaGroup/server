@@ -1,4 +1,4 @@
-const { User, Transaction, Review, Service } = require('../../db');
+const { User, Transaction, Review, Service } = require('../../db.js');
 
 const getUserController = async (id) => {
 

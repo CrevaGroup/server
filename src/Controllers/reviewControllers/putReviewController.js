@@ -1,4 +1,4 @@
-const { Review } = require('../../db');
+const { Review } = require('../../db.js');
 
 const putReviewController = async (reviewInfo) => {
     const review = await Review.findByPk(reviewInfo.id)

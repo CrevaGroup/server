@@ -1,5 +1,5 @@
-const { Service, Type } = require('../../db');
-const titleCase = require('../../Utils/titleCase');
+const { Service, Type } = require('../../db.js');
+const titleCase = require('../../Utils/titleCase.js');
 
 const putServiceController = async (serviceInfo) => {
     const service = await Service.findByPk(serviceInfo.id);

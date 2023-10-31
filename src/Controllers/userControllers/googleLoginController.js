@@ -1,9 +1,9 @@
-const { User, Review, Transaction, Service } = require('../../db');
-const transporter = require('../../nodemailer');
-const emailBuilder = require('../../Utils/emailBuilder');
-const titleCase = require('../../Utils/titleCase');
-const cloudinary = require('../../cloudinary');
-const completeChecker = require('../../Utils/completeChecker')
+const { User, Review, Transaction, Service } = require('../../db.js');
+const transporter = require('../../nodemailer.js');
+const emailBuilder = require('../../Utils/emailBuilder.js');
+const titleCase = require('../../Utils/titleCase.js');
+const cloudinary = require('../../cloudinary.js');
+const completeChecker = require('../../Utils/completeChecker.js')
 
 const googleLoginController = async (userInfo) => {
     const userFinded = await User.findOne({

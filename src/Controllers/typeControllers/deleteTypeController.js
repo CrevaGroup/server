@@ -1,5 +1,5 @@
-const { Type } = require('../../db');
-const titleCase = require('../../Utils/titleCase');
+const { Type } = require('../../db.js');
+const titleCase = require('../../Utils/titleCase.js');
 
 const deleteTypeController = async (name) => {
     name = titleCase(name);

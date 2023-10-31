@@ -2,10 +2,10 @@ const Router = require('express');
 
 const URL = '../Handlers/reviewHandlers/';
 
-const postReviewHandler = require(URL + 'postReviewHandler');
-const getReviewHandler = require(URL + 'getReviewHandler');
-const putReviewHandler = require(URL + 'putReviewHandler');
-const deleteReviewHandler = require(URL + 'deleteReviewHandler');
+const postReviewHandler = require(URL + 'postReviewHandler.js');
+const getReviewHandler = require(URL + 'getReviewHandler.js');
+const putReviewHandler = require(URL + 'putReviewHandler.js');
+const deleteReviewHandler = require(URL + 'deleteReviewHandler.js');
 
 const reviewRouter = Router();
 

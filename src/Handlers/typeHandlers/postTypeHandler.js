@@ -1,4 +1,4 @@
-const postTypeController = require('../../Controllers/typeControllers/postTypeController');
+const postTypeController = require('../../Controllers/typeControllers/postTypeController.js');
 
 const postTypeHandler = async (req, res) => {
     try {

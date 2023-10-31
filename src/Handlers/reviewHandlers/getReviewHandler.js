@@ -1,4 +1,4 @@
-const getReviewController = require("../../Controllers/reviewControllers/getReviewController");
+const getReviewController = require("../../Controllers/reviewControllers/getReviewController.js");
 
 const getReviewHandler = async(req, res) => {
     try {

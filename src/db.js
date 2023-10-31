@@ -1,16 +1,16 @@
 require("dotenv").config();
 const { Sequelize } = require("sequelize");
-const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME } = process.env;
+// const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME } = process.env;
 
 //Models
-const userModel = require('./Models/User')
-const typeModel = require('./Models/Type')
-const reviewModel = require('./Models/Review')
-const serviceModel = require('./Models/Service')
-const transactionModel = require('./Models/Transaction')
+const userModel = require('./Models/User.js')
+const typeModel = require('./Models/Type.js')
+const reviewModel = require('./Models/Review.js')
+const serviceModel = require('./Models/Service.js')
+const transactionModel = require('./Models/Transaction.js')
 
 const sequelize = new Sequelize(
-    `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`,
+    "postgres://default:2sReJUMF5ioT@ep-red-term-57447602.us-east-1.postgres.vercel-storage.com:5432/verceldb",
     { logging: false, native: false });
 
 userModel(sequelize);

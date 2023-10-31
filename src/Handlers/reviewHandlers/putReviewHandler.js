@@ -1,4 +1,4 @@
-const putReviewController = require('../../Controllers/reviewControllers/putReviewController')
+const putReviewController = require('../../Controllers/reviewControllers/putReviewController.js')
 
 const putReviewHandler = async (req, res) => {
     try {

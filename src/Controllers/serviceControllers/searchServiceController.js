@@ -1,5 +1,5 @@
-const { Service } = require('../../db');
-const inputFinder = require('../../Utils/inputFinder');
+const { Service } = require('../../db.js');
+const inputFinder = require('../../Utils/inputFinder.js');
 
 const searchServiceController = async (input) => {
     const query = inputFinder(input);

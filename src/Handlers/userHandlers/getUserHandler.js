@@ -1,4 +1,4 @@
-const getUserController = require('../../Controllers/userControllers/getUserController');
+const getUserController = require('../../Controllers/userControllers/getUserController.js');
 
 const getUserHandler = async (req,res) => {
     try {

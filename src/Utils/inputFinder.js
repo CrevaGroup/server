@@ -1,6 +1,6 @@
-const { Type } = require('../db');
+const { Type } = require('../db.js');
 const { Op } = require('sequelize');
-const { CV_MAP, PERFIL_MAP, BUSQUEDA_MAP, PRACTICA_MAP } = require('./inputMap');
+const { CV_MAP, PERFIL_MAP, BUSQUEDA_MAP, PRACTICA_MAP } = require('./inputMap.js');
 
 const inputFinder = (input) => {
     let query = {};

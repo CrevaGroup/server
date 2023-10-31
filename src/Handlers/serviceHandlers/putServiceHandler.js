@@ -1,4 +1,4 @@
-const putServiceController = require('../../Controllers/serviceControllers/putServiceController');
+const putServiceController = require('../../Controllers/serviceControllers/putServiceController.js');
 
 const putServiceHandler = async (req, res) => {
     try {

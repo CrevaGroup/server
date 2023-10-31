@@ -1,4 +1,4 @@
-const deleteServiceController = require('../../Controllers/serviceControllers/deleteServiceController');
+const deleteServiceController = require('../../Controllers/serviceControllers/deleteServiceController.js');
 
 const deleteServiceHandler = async (req, res) => {
     try {

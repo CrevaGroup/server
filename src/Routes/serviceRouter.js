@@ -2,11 +2,11 @@ const Router = require('express');
 
 const URL = '../Handlers/serviceHandlers/'
 
-const getServiceHandler = require(URL + 'getServiceHandler');
-const putServiceHandler = require(URL + 'putServiceHandler');
-const postServiceHandler = require(URL + 'postServiceHandler');
-const deleteServiceHandler = require(URL + 'deleteServiceHandler');
-const searchServiceHandler = require(URL + 'searchServiceHandler');
+const getServiceHandler = require(URL + 'getServiceHandler.js');
+const putServiceHandler = require(URL + 'putServiceHandler.js');
+const postServiceHandler = require(URL + 'postServiceHandler.js');
+const deleteServiceHandler = require(URL + 'deleteServiceHandler.js');
+const searchServiceHandler = require(URL + 'searchServiceHandler.js');
 
 const serviceRouter = Router();
 

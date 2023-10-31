@@ -1,4 +1,4 @@
-const { Review, Service, User } = require('../../db');
+const { Review, Service, User } = require('../../db.js');
 
 const postReviewController = async (reviewInfo) => {
     const review = await Review.create({...reviewInfo})

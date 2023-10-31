@@ -1,4 +1,4 @@
-const deleteReviewController = require('../../Controllers/reviewControllers/deleteReviewController')
+const deleteReviewController = require('../../Controllers/reviewControllers/deleteReviewController.js')
 
 const deleteReviewHandler = async (req, res) => {
     try {

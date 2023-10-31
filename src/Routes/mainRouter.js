@@ -1,10 +1,10 @@
 const Router = require('express');
 
-const userRouter = require('./userRouter');
-const typeRouter = require('./typeRouter');
-const reviewRouter = require('./reviewRouter');
-const serviceRouter = require('./serviceRouter');
-const transactionRouter = require('./transactionRouter');
+const userRouter = require('./userRouter.js');
+const typeRouter = require('./typeRouter.js');
+const reviewRouter = require('./reviewRouter.js');
+const serviceRouter = require('./serviceRouter.js');
+const transactionRouter = require('./transactionRouter.js');
 
 const mainRouter = Router();
 

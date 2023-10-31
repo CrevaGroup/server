@@ -1,4 +1,4 @@
-const { Transaction, Service } = require('../../db');
+const { Transaction, Service } = require('../../db.js');
 
 const putTransactionController = async (transactionInfo) => {
     const transaction = await Transaction.findByPk(transactionInfo.id)
