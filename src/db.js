@@ -34,8 +34,8 @@ User.hasMany(Transaction, {as: "buys", foreignKey: "userId"});
 Transaction.belongsTo(User, {as: "user"});
 Service.hasMany(Review, {as: "reviews", foreignKey: "serviceId"});
 Review.belongsTo(Service, {as: "service"});
-Service.belongsToMany(Transaction, { through: 'Services_Transactions' });
-Transaction.belongsToMany(Service, { through: 'Services_Transactions' });
+Service.belongsToMany(Transaction, { through: 'Services_Transactionsssss' });
+Transaction.belongsToMany(Service, { through: 'Services_Transactionsssss' });
 Service.belongsToMany(Type, { through: 'Services_Types' });
 Type.belongsToMany(Service, { through: 'Services_Types' });
 
