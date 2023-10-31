@@ -1,6 +1,6 @@
 require("dotenv").config();
 const { Sequelize } = require("sequelize");
-const { POSTGRES_URL } = process.env;
+const { POSTGRES_USER, POSTGRES_PASSWORD, POSTGRES_HOST, POSTGRES_DATABASE } = process.env;
 
 //Models
 const userModel = require('./Models/User.js')
@@ -10,7 +10,7 @@ const serviceModel = require('./Models/Service.js')
 const transactionModel = require('./Models/Transaction.js')
 
 const sequelize = new Sequelize(
-    `${POSTGRES_URL}`,
+    `postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}/${POSTGRES_DATABASE}?sslmode=require`,
     { logging: false, native: false });
 
 userModel(sequelize);
@@ -34,8 +34,8 @@ User.hasMany(Transaction, {as: "buys", foreignKey: "userId"});
 Transaction.belongsTo(User, {as: "user"});
 Service.hasMany(Review, {as: "reviews", foreignKey: "serviceId"});
 Review.belongsTo(Service, {as: "service"});
-Service.belongsToMany(Transaction, { through: 'Services_Transactions' });
-Transaction.belongsToMany(Service, { through: 'Services_Transactions' });
+Service.belongsToMany(Transaction, { through: 'Services_Transactionsssss' });
+Transaction.belongsToMany(Service, { through: 'Services_Transactionsssss' });
 Service.belongsToMany(Type, { through: 'Services_Types' });
 Type.belongsToMany(Service, { through: 'Services_Types' });
 
