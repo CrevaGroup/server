@@ -1,0 +1,12 @@
+const getKeywordController = require('../../Controllers/keywordControllers/getKeywordController');
+
+const getKeywordHandler = async (req, res) => {
+    try {
+        const response = await getServiceController();
+        res.status(200).json(response);
+    } catch (err) {
+        res.status(404).json(err.message);
+    }
+}
+
+module.exports = getKeywordHandler;
