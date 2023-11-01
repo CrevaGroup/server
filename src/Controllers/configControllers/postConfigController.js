@@ -1,11 +1,12 @@
 const {Config} = require('../../db.js')
 
 const postConfigController = async(configInfo)=>{
+    console.log(configInfo);
     const allConfig = await Config.findAll();
-    if(allConfig.length > 1){
+    if(allConfig.length >= 1){
         throw new Error('Ya existe una configuración!')
     }
-    const config = await Config.create({configInfo});
+    const config = await Config.create({...configInfo});
     return config;
 }
 

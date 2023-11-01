@@ -5,6 +5,7 @@ module.exports = (sequelize)=>{
         id: {
             type: DataTypes.STRING,
             primaryKey: true,
+            defaultValue: DataTypes.UUIDV4
         },
         filters: {
             type: DataTypes.BOOLEAN,
