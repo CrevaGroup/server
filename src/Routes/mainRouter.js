@@ -6,7 +6,7 @@ const reviewRouter = require('./reviewRouter.js');
 const serviceRouter = require('./serviceRouter.js');
 const transactionRouter = require('./transactionRouter.js');
 const igPostRouter = require('./igPostRouter.js');
-const configRouter = require('/configRouter.js');
+const configRouter = require('./configRouter.js');
 
 const mainRouter = Router();
 
