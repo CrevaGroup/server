@@ -4,7 +4,6 @@ const putIgPostController = require("../../Controllers/igPostControllers/putIgPo
 const putIgPosHandler = async (req, res) =>{
 
     try {
-        console.log("ingresa");
         const post = req.body;
         const response = await putIgPostController(post) 
         res.status(201).json(response);
