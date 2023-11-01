@@ -34,6 +34,13 @@ module.exports = (sequelize)=>{
         photo: {
             type: DataTypes.STRING,
             defaultValue: 'https://res.cloudinary.com/dk4amlgtk/image/upload/v1698592965/tnrmteyspw3g0gd4ijrh.png'
+        },
+        curriculum: {
+            type: DataTypes.STRING,
+            allowNull: true
+        }, 
+        nacionalidad: {
+            type: DataTypes.STRING
         }
     }, {paranoid: true})
 }
