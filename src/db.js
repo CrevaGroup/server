@@ -8,6 +8,7 @@ const typeModel = require('./Models/Type')
 const reviewModel = require('./Models/Review')
 const serviceModel = require('./Models/Service')
 const transactionModel = require('./Models/Transaction')
+const igPostModel = require('./Models/IGpost.js')
 
 const sequelize = new Sequelize(
     `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`,
@@ -18,6 +19,7 @@ typeModel(sequelize);
 reviewModel(sequelize);
 serviceModel(sequelize);
 transactionModel(sequelize);
+igPostModel(sequelize);
 
 const {
     User,
