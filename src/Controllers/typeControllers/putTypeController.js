@@ -7,13 +7,13 @@ const putTypeController = async (typeInfo) => {
     if (!type) throw new Error ('No se encuentra la palabra clave.')
     
     if (typeInfo.name) type.name = typeInfo.name;
-    await service.save();
+    await type.save();
 
-    await service.setTypes([]);
+    await type.setKeywords([]);
 
     for (let name of typeInfo.keywords) {
         const keyword = await Keyword.findOne({ where: { name: titleCase(name) } });
-        await type.addType(keyword);
+        await type.addKeyword(keyword);
     };
 
     return type;

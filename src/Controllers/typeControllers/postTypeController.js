@@ -10,7 +10,7 @@ const postTypeController = async (typeInfo) => {
     if (created) {
         for (let name of typeInfo.keywords) {
             const keyword = await Keyword.findOne({ where: { name: titleCase(name) } });
-            await type.addType(keyword);
+            await type.addKeyword(keyword);
         };
         return type;
     }
