@@ -9,7 +9,7 @@ const deleteKeywordHandler = require(URL + 'deleteKeywordHandler');
 const keywordRouter = Router();
 
 keywordRouter.get('/', getKeywordHandler);
-keywordRouter.post('/', postKeywordHandler);
-keywordRouter.delete('/:id', deleteKeywordHandler);
+keywordRouter.post('/:keyword', postKeywordHandler);
+keywordRouter.delete('/:keyword', deleteKeywordHandler);
 
 module.exports = keywordRouter;
