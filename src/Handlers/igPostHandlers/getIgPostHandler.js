@@ -5,7 +5,6 @@ const getIgPostHandler = async (req,res)=>{
 try {
     const {id} = req.query;
     const response = await getIgPostController(id)
-    console.log("response", response);
     res.status(200).json(response)
 
 } catch (error) {
