@@ -1,4 +1,4 @@
-const deleteKeywordController = require('../../Controllers/keywordControllers/deleteKeywordController');
+const deleteKeywordController = require('../../Controllers/keywordControllers/deleteKeywordController.js');
 
 const deleteKeywordHandler = async (req, res) => {
     try {

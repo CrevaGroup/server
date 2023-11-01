@@ -1,5 +1,5 @@
-const { Keyword } = require('../../db');
-const titleCase = require('../../Utils/titleCase');
+const { Keyword } = require('../../db.js');
+const titleCase = require('../../Utils/titleCase.js');
 
 const deleteKeywordController = async (keyword) => {
     keyword = titleCase(keyword);

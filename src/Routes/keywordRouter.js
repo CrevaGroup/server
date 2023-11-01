@@ -2,9 +2,9 @@ const Router = require('express');
 
 const URL = '../Handlers/keywordHandlers/'
 
-const getKeywordHandler = require(URL + 'getKeywordHandler');
-const postKeywordHandler = require(URL + 'postKeywordHandler');
-const deleteKeywordHandler = require(URL + 'deleteKeywordHandler');
+const getKeywordHandler = require(URL + 'getKeywordHandler.js');
+const postKeywordHandler = require(URL + 'postKeywordHandler.js');
+const deleteKeywordHandler = require(URL + 'deleteKeywordHandler.js');
 
 const keywordRouter = Router();
 

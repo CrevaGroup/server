@@ -1,5 +1,5 @@
 const { Keyword } = require('../../db.js');
-const titleCase = require('../../Utils/titleCase');
+const titleCase = require('../../Utils/titleCase.js');
 
 const postKeywordController = async (keyword) => {
     keyword = titleCase(keyword);

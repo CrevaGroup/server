@@ -1,4 +1,4 @@
-const postKeywordController = require('../../Controllers/keywordControllers/postKeywordController');
+const postKeywordController = require('../../Controllers/keywordControllers/postKeywordController.js');
 
 const postKeywordHandler = async (req, res) => {
     try {

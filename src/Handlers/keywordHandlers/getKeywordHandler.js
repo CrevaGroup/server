@@ -1,4 +1,4 @@
-const getKeywordController = require('../../Controllers/keywordControllers/getKeywordController');
+const getKeywordController = require('../../Controllers/keywordControllers/getKeywordController.js');
 
 const getKeywordHandler = async (req, res) => {
     try {
