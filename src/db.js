@@ -10,7 +10,7 @@ const serviceModel = require('./Models/Service')
 const transactionModel = require('./Models/Transaction')
 const igPostModel = require('./Models/IGpost.js')
 const configModel = require('./Models/Config.js')
-const textBlogModel = require('./Models/textBlog')
+const textBlogModel = require('./Models/TextBlog.js')
 
 const sequelize = new Sequelize(
     `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`,
