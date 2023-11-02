@@ -1,27 +1,27 @@
 const { Service, Keyword, Type } = require('../../db');
 const titleCase = require('../../Utils/titleCase');
-const inputFinder = require('../../Utils/inputFinder');
 
 const searchServiceController = async (input) => {
     input = titleCase(input).split(' ');
     const keywords = await Keyword.findAll();
-    let services = [];
-    let servicesNames = [];
     let types = [];
+    let services = [];
+    let servicesId = [];
     for (let keyword of keywords) 
         if (input.includes(keyword.name)) {
-            const keywordDb = await Keyword.findOne({ where: {name: keyword.name }});
-            const keywordTypes = await keywordDb.getTypes();
-            types = [ ...types, ...keywordTypes ];
+            const keywordDb = await Keyword.findOne({ where: { name: keyword.name }});
+            types = [ ...types, ...await keywordDb.getTypes() ];
         }
-    console.log(types);
     for (let type of types) {
         const typeDb = await Type.findOne({ where: {name: type.name }});
-        const typeServices = await typeDb.getServices();
-        services = [ ...services, ...typeServices ];
+        services = [ ...services, ...await typeDb.getServices() ];
     }
-
-    return services;
+    return !services.length ? await Service.findAll() : services.filter(service => {
+        if (!servicesId.includes(service.id)) {
+            servicesId.push(service.id);
+            return service;
+        }
+    });
 }
 
 module.exports = searchServiceController;
