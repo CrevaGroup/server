@@ -1,4 +1,4 @@
-const { TextBlog } = require('../../db');
+const { TextBlog } = require('../../db.js');
 
 const putTextBlogController = async (textBlogInfo) => {
     const blogEdited = await TextBlog.findByPk(textBlogInfo.id)
