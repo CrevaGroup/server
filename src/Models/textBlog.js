@@ -13,7 +13,7 @@ module.exports = (sequelize)=>{
     },
     
     content: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: false
     }
 
