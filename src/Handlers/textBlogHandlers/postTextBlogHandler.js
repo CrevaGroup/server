@@ -1,4 +1,4 @@
-const postTextBlogController = require("../../Controllers/textBlogControllers/postTextBlogController");
+const postTextBlogController = require("../../Controllers/textBlogControllers/postTextBlogController.js");
 
 
 
@@ -10,7 +10,7 @@ const postTextBlogHandler = async (req,res) => {
         res.status(201).json(response) 
 
     } catch (error) {
-        res.status(404).json(error.massege)
+        res.status(400).json(error.massege)
     }
 
 }

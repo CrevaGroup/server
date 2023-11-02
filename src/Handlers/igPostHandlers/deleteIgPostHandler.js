@@ -7,7 +7,7 @@ try {
     const response = await deleteIgPostController(id);
     res.status(201).json(response);
 } catch (error) {
-    res.status(404).json(error.message)
+    res.status(400).json(error.message)
 }
 
 }
