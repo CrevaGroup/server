@@ -14,21 +14,21 @@ const stripe = new Stripe(process.env.STRIPE_KEY)
           limit: 5,
         });
     
-        const eventData = events.data[0];
+        const eventData = events.data;
+
+        const price = await stripe.prices.retrieve(eventData[0].price.id)
+
+        console.log(price);
     
         if (!eventData) {
           throw new Error('No se encontraron eventos para la sesión.');
         }
 
         console.log("eventData", eventData)
-    
-        const displayItems = eventData.display_items;
-
-        console.log("displayItems",displayItems)
 
            if(displayItems){
         // Iterar sobre los elementos
-        displayItems.forEach((item, index) => {
+        eventData.forEach((item, index) => {
           console.log(`Item ${index + 1}:`);
           console.log(`Name: ${item.custom.name}`);
           console.log(`Quantity: ${item.quantity}`);
