@@ -27,7 +27,7 @@ const mpLinkGenController = async (cart) => {
         },
         auto_return: 'approved',
         back_urls: {
-            success: ``, //aca va la URL de la view que hizo valen para el success
+            success: `http://localhost:5173/success`, //aca va la URL de la view que hizo valen para el success
             failure: ``  //aca va la URL de la view que hizo valen para el failure
         },
         notification_url: `${URL}/transaction/notify`,
