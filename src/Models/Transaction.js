@@ -12,7 +12,7 @@ module.exports = (sequelize) =>{
             allowNull: false,
         },
         status: {
-            type: DataTypes.UUID,
+            type: DataTypes.STRING,
             defaultValue: "pending"
         }
 
