@@ -2,9 +2,9 @@ const Router = require('express');
 
 const URL = '../Handlers/transactionHandlers/'
 
-const postTransactionHandler = require(URL + 'postTransactionHandler');
-const getTransactionHandler = require(URL + 'getTransactionHandler');
-const putTransactionHandler = require(URL + 'putTransactiontHandler');
+const postTransactionHandler = require(URL + 'postTransactionHandler.js');
+const getTransactionHandler = require(URL + 'getTransactionHandler.js');
+const putTransactionHandler = require(URL + 'putTransactiontHandler.js');
 const mercadopagoHandler = require('../Handlers/mercadopagoHandlers/mercadopagoHandler.js');
 const mpLinkGenHandler = require('../Handlers/mercadopagoHandlers/mpLinkGenHandler.js');
 
