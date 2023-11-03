@@ -19,9 +19,10 @@ const {Transaction, Service} = require("../../db.js")
         const userId = session.client_reference_id
 
         const status = session.payment_status
+        
 
         if(status === "paid"){
-          const transaction = await Transaction.create({amount: amount, status: "approved", userId: userId})
+                const transaction = await Transaction.create({amount: amount, status: "approved", userId: userId, currency: "USD", from: "Stripe"})
 
           for(const serviceId of serviceIds){
             const service = await Service.findByPk(serviceId);

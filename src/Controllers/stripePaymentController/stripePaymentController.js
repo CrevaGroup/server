@@ -29,9 +29,9 @@ const stripePaymentController = async (stripeInfo) => {
 
         mode: "payment",
         success_url: "http://localhost:3001/stripe/success?session_id={CHECKOUT_SESSION_ID}",
-        cancel_url: "http://localhost:3001/stripe/cancel"
+        cancel_url: "http://localhost:3001/stripe/cancel" //aca va la ruta de failure de valen
 })
-    return payment;
+    return payment.url;
 }
 
 
