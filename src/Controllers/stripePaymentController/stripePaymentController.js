@@ -4,12 +4,27 @@ const stripe = new Stripe(process.env.STRIPE_KEY)
 
 const stripePaymentController = async (stripeInfo) => {
 
-    const ids = stripeInfo.map(product => product.price_data.product_data.metadata.product_id)
+    const ids = stripeInfo.items.map(item => item.id)
+
+    const userId = stripeInfo.userId;
+
+    const items = stripeInfo.items.map(item => ({
+        price_data:{
+            product_data:{ 
+            name: item.title,
+            description: item.description
+            },
+            currency: "usd",
+            unit_amount: item.price * 100},
+            quantity : 1
+
+    })
+    )
     
     const payment = await stripe.checkout.sessions.create({
         
-        line_items: stripeInfo,
-        client_reference_id:"1234567890",
+        line_items: items,
+        client_reference_id:userId,
         metadata: ids,
 
         mode: "payment",
