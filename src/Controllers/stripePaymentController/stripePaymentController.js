@@ -1,5 +1,6 @@
+require('dotenv').config()
 const Stripe = require("stripe")
-const stripe = new Stripe("sk_test_51O57BRIooz29euKCSy30bIPtBhnS4mqtKrekRGqSVnyohrtfg3csn24VaPrAW0HhEjh2odNI2qd4youtatMQqLY900c123ZDXF")
+const stripe = new Stripe(process.env.STRIPE_KEY)
 
 const stripePaymentController = async (stripeInfo) => {
     
