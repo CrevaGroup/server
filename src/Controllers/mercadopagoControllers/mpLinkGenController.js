@@ -7,7 +7,7 @@ const mpLinkGenController = async (cart) => {
         access_token: 'TEST-5596476252996116-110210-d508485fa045a5c70380e4bf904510d6-1533744930' 
     });
 
-    const URL = "" //aca va la URL del back deployado
+    const URL = "https://f02d-190-211-152-232.ngrok-free.app" //aca va la URL del back deployado
 
     let preference = {
         items: cart.items.map(item => ({

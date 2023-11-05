@@ -6,11 +6,14 @@ const emailBuilder = require('../../Utils/emailBuilder');
 
 const postUserController = async (userInfo) => {
 
+    console.log(userInfo);
+
     const userFinded = await User.findByPk(userInfo.id)
 
     if (!userFinded) {
 
         if (userInfo.fullName) userInfo.fullName = titleCase(userInfo.fullName);
+        if (userInfo.age) userInfo.age = JSON.stringify(userInfo.age)
 
         const user = await User.create({ ...userInfo });
 
