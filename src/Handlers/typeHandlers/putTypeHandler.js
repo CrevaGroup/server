@@ -1,4 +1,4 @@
-const putTypeController = require('../../Controllers/typeControllers/putTypeController');
+const putTypeController = require('../../Controllers/typeControllers/putTypeController.js');
 
 const putTypeHandler = async (req, res) => {
     try {

@@ -1,5 +1,5 @@
-const postUserController = require('../../Controllers/userControllers/postUserController');
-const googleLoginController = require('../../Controllers/userControllers/googleLoginController');
+const postUserController = require('../../Controllers/userControllers/postUserController.js');
+const googleLoginController = require('../../Controllers/userControllers/googleLoginController.js');
 
 const postUserHandler = async (req,res) => {
     try {

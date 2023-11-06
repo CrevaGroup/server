@@ -1,4 +1,4 @@
-const { Review } = require('../../db');
+const { Review } = require('../../db.js');
 
 const deleteReviewController = async (id) => {
     const review = await Review.destroy({where: {id: id}})

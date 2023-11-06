@@ -1,4 +1,4 @@
-const putTransactionController = require("../../Controllers/transactionControllers/putTransactionController");
+const putTransactionController = require("../../Controllers/transactionControllers/putTransactionController.js");
 
 
 

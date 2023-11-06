@@ -1,4 +1,4 @@
-const deleteTypeController = require('../../Controllers/typeControllers/deleteTypeController');
+const deleteTypeController = require('../../Controllers/typeControllers/deleteTypeController.js');
 
 const deleteTypeHandler = async (req, res) => {
     try {

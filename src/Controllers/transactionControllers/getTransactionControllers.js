@@ -1,4 +1,4 @@
-const {Transaction, Service, User} = require('../../db')
+const {Transaction, Service, User} = require('../../db.js')
 
 const getTransactionController = async(id) =>{
     if(id){

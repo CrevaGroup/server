@@ -1,6 +1,6 @@
-const {Transaction, Service, User} = require('../../db');
-const transporter = require('../../nodemailer');
-const emailBuilder = require('../../Utils/emailBuilder');
+const {Transaction, Service, User} = require('../../db.js');
+const transporter = require('../../nodemailer.js');
+const emailBuilder = require('../../Utils/emailBuilder.js');
 
 const postTransactionController = async (transactionInfo) => {
  const transaction = await Transaction.create({...transactionInfo});

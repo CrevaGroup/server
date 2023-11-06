@@ -1,4 +1,4 @@
-const stripePaymentController = require("../../Controllers/stripePaymentController/stripePaymentController");
+const stripePaymentController = require("../../Controllers/stripePaymentController/stripePaymentController.js");
 
 const stripePaymentHandler = async (req, res) => {
     try {

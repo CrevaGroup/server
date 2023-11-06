@@ -1,4 +1,4 @@
-const getTransactionController = require("../../Controllers/transactionControllers/getTransactionControllers");
+const getTransactionController = require("../../Controllers/transactionControllers/getTransactionControllers.js");
 
 
 const getTransactionHandler = async (req, res) => {

@@ -1,4 +1,4 @@
-const { Service } = require('../../db');
+const { Service } = require('../../db.js');
 
 const deleteServiceController = async (id) => {
     const service = await Service.destroy({ where: { id }});

@@ -1,4 +1,4 @@
-const deleteIgPostController = require("../../Controllers/igPostControllers/deleteIgPostController");
+const deleteIgPostController = require("../../Controllers/igPostControllers/deleteIgPostController.js");
 
 
 const deleteIgPostHandler = async (req,res)=>{

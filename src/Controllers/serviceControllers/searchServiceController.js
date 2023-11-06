@@ -1,5 +1,5 @@
-const { Service, Keyword, Type } = require('../../db');
-const titleCase = require('../../Utils/titleCase');
+const { Service, Keyword, Type } = require('../../db.js');
+const titleCase = require('../../Utils/titleCase.js');
 
 const searchServiceController = async (input) => {
     input = titleCase(input).split(' ');

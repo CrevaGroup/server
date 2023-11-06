@@ -1,4 +1,4 @@
-const { Review, User, Service } = require('../../db')
+const { Review, User, Service } = require('../../db.js')
 
 const getReviewController = async(id) => {
     if (id) {

@@ -1,7 +1,7 @@
-const { User } = require('../../db');
-const transporter = require('../../nodemailer');
-const titleCase = require('../../Utils/titleCase');
-const emailBuilder = require('../../Utils/emailBuilder');
+const { User } = require('../../db.js');
+const transporter = require('../../nodemailer.js');
+const titleCase = require('../../Utils/titleCase.js');
+const emailBuilder = require('../../Utils/emailBuilder.js');
 
 
 const postUserController = async (userInfo) => {

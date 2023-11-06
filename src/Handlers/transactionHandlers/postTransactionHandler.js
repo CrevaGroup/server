@@ -1,4 +1,4 @@
-const postTransactionController = require("../../Controllers/transactionControllers/postTransactionController");
+const postTransactionController = require("../../Controllers/transactionControllers/postTransactionController.js");
 
 const postTransactionHandler = async (req, res) => {
     try {

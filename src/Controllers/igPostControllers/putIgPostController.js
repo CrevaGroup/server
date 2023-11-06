@@ -1,4 +1,4 @@
-const {IGpost} = require('../../db');
+const {IGpost} = require('../../db.js');
 
 
 const putIgPostController = async (postInfo)=>{

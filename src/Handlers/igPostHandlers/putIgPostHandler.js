@@ -1,4 +1,4 @@
-const putIgPostController = require("../../Controllers/igPostControllers/putIgPostController");
+const putIgPostController = require("../../Controllers/igPostControllers/putIgPostController.js");
 
 
 const putIgPosHandler = async (req, res) =>{

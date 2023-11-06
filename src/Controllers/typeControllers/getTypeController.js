@@ -1,4 +1,4 @@
-const { Type } = require('../../db');
+const { Type } = require('../../db.js');
 
 const getTypeController = async () => {
     const types = await Type.findAll();

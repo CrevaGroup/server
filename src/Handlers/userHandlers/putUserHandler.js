@@ -1,4 +1,4 @@
-const putUserController = require('../../Controllers/userControllers/putUserController');
+const putUserController = require('../../Controllers/userControllers/putUserController.js');
 
 const putUserHandler = async (req,res) => {
     try {

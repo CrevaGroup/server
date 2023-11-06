@@ -1,5 +1,5 @@
-const { Type, Keyword } = require('../../db');
-const titleCase = require('../../Utils/titleCase');
+const { Type, Keyword } = require('../../db.js');
+const titleCase = require('../../Utils/titleCase.js');
 
 const postTypeController = async (typeInfo) => {
     typeInfo = {
