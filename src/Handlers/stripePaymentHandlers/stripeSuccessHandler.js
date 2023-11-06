@@ -1,4 +1,5 @@
 const stripeSuccessController = require('../../Controllers/stripePaymentController/stripeSuccessController.js')
+require('dotenv').config()
 
 const stripeSuccessHandler = async (req, res) => {
   try {
@@ -6,7 +7,7 @@ const stripeSuccessHandler = async (req, res) => {
     const response = await stripeSuccessController(session_id)
     
     if(response === "success"){
-      res.redirect(`http://localhost:5173/success`); //aca va la rita de la pestaña de succes de valen
+      res.redirect(`${process.env.URL_CLIENT}/success`); //aca va la rita de la pestaña de succes de valen
     }
 
   } catch (err) {

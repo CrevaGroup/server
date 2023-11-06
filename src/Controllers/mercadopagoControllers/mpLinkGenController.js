@@ -1,13 +1,14 @@
 const mercadopago = require('mercadopago');
+require('dotenv').config
 
 const mpLinkGenController = async (cart) => {
 
     mercadopago.configure({
         //la idea es esto hacerlo con una variable de entorno pero por el momento dejame el de prueba
-        access_token: 'TEST-5596476252996116-110210-d508485fa045a5c70380e4bf904510d6-1533744930' 
+        access_token: process.env.MERCADOPAGO_KEY 
     });
 
-    const URL = "" //aca va la URL del back deployado
+    const URL = process.env.URL_BACK //aca va la URL del back deployado
 
     let preference = {
         items: cart.items.map(item => ({
@@ -27,7 +28,7 @@ const mpLinkGenController = async (cart) => {
         },
         auto_return: 'approved',
         back_urls: {
-            success: `http://localhost:5173/success`, //aca va la URL de la view que hizo valen para el success
+            success: `${process.env.URL_CLIENT}/success`, //aca va la URL de la view que hizo valen para el success
             failure: ``  //aca va la URL de la view que hizo valen para el failure
         },
         notification_url: `${URL}/transaction/notify`,

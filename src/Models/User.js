@@ -26,10 +26,7 @@ module.exports = (sequelize)=>{
             }
         },
         age: {
-            type: DataTypes.INTEGER,
-            validate: {
-                min: 18
-            }
+            type: DataTypes.TEXT,
         },
         photo: {
             type: DataTypes.STRING,
