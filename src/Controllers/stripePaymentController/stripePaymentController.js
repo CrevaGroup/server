@@ -28,8 +28,8 @@ const stripePaymentController = async (stripeInfo) => {
         metadata: ids,
 
         mode: "payment",
-        success_url: "http://localhost:3001/stripe/success?session_id={CHECKOUT_SESSION_ID}",
-        cancel_url: "http://localhost:3001/stripe/cancel" //aca va la ruta de failure de valen
+        success_url: `${process.env.URL_CLIENT}/stripe/success?session_id={CHECKOUT_SESSION_ID}`,
+        cancel_url: `${process.env.URL_CLIENT}` //aca va la ruta de failure de valen
 })
     return payment.url;
 }
