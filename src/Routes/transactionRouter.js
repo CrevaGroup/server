@@ -4,7 +4,7 @@ const URL = '../Handlers/transactionHandlers/'
 
 const postTransactionHandler = require(URL + 'postTransactionHandler.js');
 const getTransactionHandler = require(URL + 'getTransactionHandler.js');
-const putTransactionHandler = require(URL + 'putTransactionHandler.js');
+const putTransactionHandler = require(URL + 'putTransactiontHandler.js');
 const mercadopagoHandler = require('../Handlers/mercadopagoHandlers/mercadopagoHandler.js');
 const mpLinkGenHandler = require('../Handlers/mercadopagoHandlers/mpLinkGenHandler.js');
 
