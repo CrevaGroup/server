@@ -20,6 +20,8 @@ const stripePaymentController = async (stripeInfo) => {
 
     })
     )
+
+    console.log();
     
     const payment = await stripe.checkout.sessions.create({
         
@@ -28,7 +30,7 @@ const stripePaymentController = async (stripeInfo) => {
         metadata: ids,
 
         mode: "payment",
-        success_url: `${process.env.URL_CLIENT}/stripe/success?session_id={CHECKOUT_SESSION_ID}`,
+        success_url: `${process.env.URL_BACK}/stripe/success?session_id={CHECKOUT_SESSION_ID}`,
         cancel_url: `${process.env.URL_CLIENT}` //aca va la ruta de failure de valen
 })
     return payment.url;
