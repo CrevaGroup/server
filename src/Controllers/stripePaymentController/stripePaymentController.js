@@ -20,8 +20,6 @@ const stripePaymentController = async (stripeInfo) => {
 
     })
     )
-
-    console.log();
     
     const payment = await stripe.checkout.sessions.create({
         
