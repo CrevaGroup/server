@@ -10,6 +10,18 @@ module.exports = (sequelize) =>{
         amount:{
             type: DataTypes.FLOAT,
             allowNull: false,
+        },
+        status: {
+            type: DataTypes.STRING,
+            defaultValue: "pending"
+        },
+        currency: {
+            type: DataTypes.STRING,
+            defaultValue: "ARS"
+        },
+        from: {
+            type: DataTypes.STRING,
+            defaultValue: "MercadoPago"
         }
 
     }, {paranoid: true})

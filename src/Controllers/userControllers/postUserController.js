@@ -11,6 +11,7 @@ const postUserController = async (userInfo) => {
     if (!userFinded) {
 
         if (userInfo.fullName) userInfo.fullName = titleCase(userInfo.fullName);
+        if (userInfo.age) userInfo.age = JSON.stringify(userInfo.age)
 
         const user = await User.create({ ...userInfo });
 

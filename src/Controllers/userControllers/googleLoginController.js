@@ -53,7 +53,7 @@ const googleLoginController = async (userInfo) => {
         return completeChecker(newUser)
     }
 
-    completeChecker(userFinded)
+   return completeChecker(userFinded)
 
 }
 
