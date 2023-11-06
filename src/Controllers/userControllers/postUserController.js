@@ -6,8 +6,6 @@ const emailBuilder = require('../../Utils/emailBuilder');
 
 const postUserController = async (userInfo) => {
 
-    console.log(userInfo);
-
     const userFinded = await User.findByPk(userInfo.id)
 
     if (!userFinded) {
