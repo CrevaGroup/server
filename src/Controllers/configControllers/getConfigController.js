@@ -1,7 +1,7 @@
 const {Config} = require('../../db.js')
 
 const getConfigController = async () => {
-    const config = await Config.findAll();
+    const config = await Config.findOne();
     if(config){
         return config;
     }
