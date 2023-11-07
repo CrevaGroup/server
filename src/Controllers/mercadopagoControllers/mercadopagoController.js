@@ -9,31 +9,27 @@ const mercadopagoController = async (paymentId) => {
     //la idea es esto hacerlo con una variable de entorno pero por el momento dejame el de prueba
     access_token: process.env.MERCADOPAGO_KEY 
 });
-console.log('hola');
   const payment = await mercadopago.payment.findById(Number(paymentId));
-  console.log('chau');
+
   if (payment?.body?.status === "approved") {
 
-  //   const userId = payment.body.additional_info.payer.address.zip_code
+    const userId = payment.body.additional_info.payer.address.zip_code
 
-  //   const amount = payment.body.transaction_amount
+    const amount = payment.body.transaction_amount
 
-  //   const items = payment.body.additional_info.items
+    const items = payment.body.additional_info.items
 
-  //   const ids = items.map(item => item.id)
+    const ids = items.map(item => item.id)
 
-    const transaction = await Transaction.create({ amount: 200, status: "approved", userId: "NMHlUe6VpKZke80NVzLRT2PYMdG2" })
+    const transaction = await Transaction.create({ amount: amount, status: "approved", userId: userId })
 
-    // for (const id of ids) {
-      const service = await Service.findByPk("0ba76c78-c37f-4d1c-abbd-43edffbd83e8");
+    for (const id of ids) {
+      const service = await Service.findByPk(id);
       await transaction.addService(service);
-    // }
+    }
     return 'success'
   }
-  
-  const transaction = await Transaction.create({ amount: 300, status: "disapproved", userId: "NMHlUe6VpKZke80NVzLRT2PYMdG2" })
-  return 'no'
-
+  throw new Error('failure')
 }
 
 module.exports = mercadopagoController;
