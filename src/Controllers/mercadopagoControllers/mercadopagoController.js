@@ -15,7 +15,7 @@ const mercadopagoController = async (paymentId) => {
 
   //   const ids = items.map(item => item.id)
 
-    const transaction = await Transaction.create({ amount: 200, status: "approved", userId: "LXDsZxEnaEShGOjVQYCIigLxm2G2" })
+    const transaction = await Transaction.create({ amount: 200, status: "approved", userId: "NMHlUe6VpKZke80NVzLRT2PYMdG2" })
 
     // for (const id of ids) {
       const service = await Service.findByPk("0ba76c78-c37f-4d1c-abbd-43edffbd83e8");
@@ -24,7 +24,7 @@ const mercadopagoController = async (paymentId) => {
     return 'success'
   }
   
-  const transaction = await Transaction.create({ amount: 300, status: "disapproved", userId: "LXDsZxEnaEShGOjVQYCIigLxm2G2" })
+  const transaction = await Transaction.create({ amount: 300, status: "disapproved", userId: "NMHlUe6VpKZke80NVzLRT2PYMdG2" })
   return 'no'
 
 }
