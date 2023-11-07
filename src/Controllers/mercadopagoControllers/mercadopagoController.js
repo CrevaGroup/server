@@ -17,8 +17,8 @@ const mercadopagoController = async (paymentId) => {
     const transaction = await Transaction.create({ amount: 200, status: "approved", userId: "LXDsZxEnaEShGOjVQYCIigLxm2G2" })
 
     // for (const id of ids) {
-      // const service = await Service.findByPk("0ba76c78-c37f-4d1c-abbd-43edffbd83e8");
-      // await transaction.addService(service);
+      const service = await Service.findByPk("0ba76c78-c37f-4d1c-abbd-43edffbd83e8");
+      await transaction.addService(service);
     // }
     return 'success'
   // }
