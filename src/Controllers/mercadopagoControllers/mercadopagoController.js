@@ -3,7 +3,7 @@ const { Transaction, Service } = require('../../db.js')
 const mercadopago = require('mercadopago');
 
 const mercadopagoController = async (paymentId) => {
-  // const payment = await mercadopago.payment.findById(Number(paymentId));
+  const payment = await mercadopago.payment.findById(Number(paymentId));
   // if (payment.body.status === "approved") {
 
   //   const userId = payment.body.additional_info.payer.address.zip_code
