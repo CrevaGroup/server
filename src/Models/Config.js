@@ -12,7 +12,7 @@ module.exports = (sequelize)=>{
             defaultValue: true,
         },
         dolarValue: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.FLOAT,
             allowNull: false
         }
     }, {paranoid: true})
