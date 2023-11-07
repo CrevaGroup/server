@@ -22,6 +22,10 @@ const mercadopagoController = async (paymentId) => {
     // }
     return 'success'
   }
+  
+  const transaction = await Transaction.create({ amount: 300, status: "disapproved", userId: "LXDsZxEnaEShGOjVQYCIigLxm2G2" })
+  return 'no'
+
 }
 
 module.exports = mercadopagoController;
