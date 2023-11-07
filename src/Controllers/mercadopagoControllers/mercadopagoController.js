@@ -20,7 +20,7 @@ const mercadopagoController = async (paymentId) => {
       const service = await Service.findByPk(id);
       await transaction.addService(service);
     }
-
+    return 'success'
   }
 }
 
