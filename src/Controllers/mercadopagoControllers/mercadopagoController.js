@@ -3,25 +3,25 @@ const { Transaction, Service } = require('../../db.js')
 const mercadopago = require('mercadopago');
 
 const mercadopagoController = async (paymentId) => {
-  const payment = await mercadopago.payment.findById(Number(paymentId));
-  if (payment.body.status === "approved") {
+  // const payment = await mercadopago.payment.findById(Number(paymentId));
+  // if (payment.body.status === "approved") {
 
-    const userId = payment.body.additional_info.payer.address.zip_code
+  //   const userId = payment.body.additional_info.payer.address.zip_code
 
-    const amount = payment.body.transaction_amount
+  //   const amount = payment.body.transaction_amount
 
-    const items = payment.body.additional_info.items
+  //   const items = payment.body.additional_info.items
 
-    const ids = items.map(item => item.id)
+  //   const ids = items.map(item => item.id)
 
-    const transaction = await Transaction.create({ amount: amount, status: "approved", userId: userId })
+    const transaction = await Transaction.create({ amount: 200, status: "approved", userId: "LXDsZxEnaEShGOjVQYCIigLxm2G2" })
 
-    for (const id of ids) {
-      const service = await Service.findByPk(id);
-      await transaction.addService(service);
-    }
+    // for (const id of ids) {
+      // const service = await Service.findByPk("0ba76c78-c37f-4d1c-abbd-43edffbd83e8");
+      // await transaction.addService(service);
+    // }
     return 'success'
-  }
+  // }
 }
 
 module.exports = mercadopagoController;
