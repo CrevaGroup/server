@@ -14,6 +14,9 @@ module.exports = (sequelize)=>{
         dolarValue: {
             type: DataTypes.FLOAT,
             allowNull: false
+        },
+        calendar: {
+            type: DataTypes.STRING,
         }
     }, {paranoid: true})
 }
