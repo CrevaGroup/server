@@ -9,9 +9,9 @@ const emailBuilder = (to, subject, message, name, service) => {
     return {
         from: 'group.creva@gmail.com',
         to: to === 'ADMIN' ? SMTP_ADMINEMAIL : to,
-        subject: subject,
+        subject: messageHtml.subject,
         text: message,
-        html: messageHtml
+        html: messageHtml.message
     }
 }
 

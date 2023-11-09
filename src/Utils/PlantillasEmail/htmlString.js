@@ -2,6 +2,7 @@ function htmlToString (name, service){
     
 const plantillas = [
     {   name: "Curriculum",
+        subject:"¡Gracias por tu compra del servicio 'Confección de curriculum'!",
         message: `<!DOCTYPE html>
     <html lang="en">
     <head>
@@ -118,6 +119,7 @@ const plantillas = [
     </html>`
     },
     {   name: "Busqueda",
+        subject: "¡Gracias por tu compra del E-book de Búsqueda Laboral!",
         message: `<!DOCTYPE html>
         <html lang="en">
         <head>
@@ -232,6 +234,7 @@ const plantillas = [
         </html>` 
     },
     {   name: "Practica",
+        subject:"¡Gracias por elegir nuestro Servicio de Capacitación en Entrevistas!",
         message: `<!DOCTYPE html>
         <html lang="en">
         <head>
@@ -351,6 +354,7 @@ const plantillas = [
         </html>`
     },
     {   name: "Perfil",
+        subject: "¡Gracias por tu compra del Servicio de Armado de Perfil de LinkedIn!",
         message: `<!DOCTYPE html>
         <html lang="en">
         <head>
@@ -468,7 +472,10 @@ const plantillas = [
 
 for(const plantilla of plantillas){
     if (plantilla.name === service){
-        return plantilla.message
+        return {
+            message: plantilla.message, 
+            subject: plantilla.subject
+        }
     }
 }
 

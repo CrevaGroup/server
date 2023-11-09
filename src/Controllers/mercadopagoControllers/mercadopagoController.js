@@ -28,10 +28,9 @@ const mercadopagoController = async (paymentId) => {
 
     const mail = emailBuilder(user.email, 'Bienvenid@', `Te damos la bienvenida a Creva, ${user.fullName}.`,user.fullName, service.name)
 
-    console.log(mail);
-
     transporter.sendMail(mail);
 
+    return 'success'
   }
 }
 
