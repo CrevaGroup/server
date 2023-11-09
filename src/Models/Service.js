@@ -26,6 +26,9 @@ module.exports = (sequelize)=>{
             type: DataTypes.INTEGER,
             allowNull: false,
         },
+        download: {
+            type: DataTypes.STRING,
+        },
         photo: {
             type: DataTypes.STRING,
             defaultValue: 'https://res.cloudinary.com/dk4amlgtk/image/upload/v1698452423/wl2rucr4t8h4pyq8b6w0.png'
