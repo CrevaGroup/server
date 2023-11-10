@@ -1,4 +1,6 @@
-const { Transaction, Service } = require('../../db.js')
+const { Transaction, Service, User } = require('../../db.js');
+const emailBuilder = require('../../Utils/emailBuilder.js');
+const transporter = require('../../nodemailer.js');
 
 const mercadopago = require('mercadopago');
 
@@ -21,6 +23,14 @@ const mercadopagoController = async (paymentId) => {
       await transaction.addService(service);
     }
 
+    const user = await User.findByPk(userId)
+    const service = await Service.findByPk(ids[0]);
+
+    const mail = emailBuilder(user.email, 'Bienvenid@', `Te damos la bienvenida a Creva, ${user.fullName}.`,user.fullName, service.name)
+
+    transporter.sendMail(mail);
+
+    return 'success'
   }
 }
 
