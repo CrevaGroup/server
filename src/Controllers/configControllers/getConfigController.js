@@ -8,7 +8,7 @@ const getConfigController = async () => {
     const config = await Config.findOne();
    
     if(config && country){
-        return {...config, ...country};
+        return {...config.dataValues, ...country};
     }
     throw new Error('No existe una configuración')
 }
