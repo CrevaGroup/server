@@ -10,7 +10,6 @@ const getServiceController = async ({ id, order, min, max, type }) => {
     else {
         const query = queryBuilder(order, min, max, type);
         const services = await Service.findAll({ ...query });
-        // if (!services.length) throw new Error ('No se encuentran servicios.');
         return services;
     }
 }
