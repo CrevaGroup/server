@@ -5,6 +5,7 @@ const emailBuilder = (to, subject, message, name, service) => {
 
     const messageHtml = htmlToString(name, service)
 
+if(name && service){
 
     return {
         from: 'group.creva@gmail.com',
@@ -13,6 +14,15 @@ const emailBuilder = (to, subject, message, name, service) => {
         text: message,
         html: messageHtml.message
     }
+}
+
+return {
+    from: 'group.creva@gmail.com',
+    to: to === 'ADMIN' ? SMTP_ADMINEMAIL : to,
+    subject: subject,
+    text: message
+}
+
 }
 
 module.exports = emailBuilder;
