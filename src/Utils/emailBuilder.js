@@ -5,7 +5,7 @@ const emailBuilder = (to, subject, message, name, service) => {
 
     const messageHtml = htmlToString(name, service)
 
-if(name && service){
+if(name && service && messageHtml !== undefined){
 
     return {
         from: 'group.creva@gmail.com',
