@@ -1,8 +1,5 @@
-
-const { Transaction, Service, User } = require('../../db.js');
-const emailBuilder = require('../../Utils/emailBuilder.js');
-const transporter = require('../../nodemailer.js');
-require('dotenv').config();
+const { Transaction, Service } = require('../../db.js')
+require('dotenv').config()
 
 const mercadopago = require('mercadopago');
 
@@ -30,14 +27,6 @@ const mercadopagoController = async (paymentId) => {
       const service = await Service.findByPk(id);
       await transaction.addService(service);
     }
-
-    const user = await User.findByPk(userId)
-    const service = await Service.findByPk(ids[0]);
-
-    const mail = emailBuilder(user.email, 'Bienvenid@', `Te damos la bienvenida a Creva, ${user.fullName}.`,user.fullName, service.name)
-
-    transporter.sendMail(mail);
-
     return 'success'
   }
   throw new Error('failure')

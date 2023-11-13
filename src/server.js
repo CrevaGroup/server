@@ -1,9 +1,6 @@
 const express = require("express");
 const morgan = require("morgan");
-const cors = require("cors");
 const mainRouter = require("./Routes/mainRouter.js");
-const dolarUpdate = require("./Utils/dollarUpdate.js");
-
 
 const server = express();
 
@@ -23,7 +20,5 @@ server.use((req, res, next) => {
  });
 
 server.use(mainRouter);
-dolarUpdate() 
-
 
 module.exports = server

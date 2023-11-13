@@ -1,6 +1,5 @@
 const mercadopago = require('mercadopago');
 require('dotenv').config
-const {Config} = require('../../db')
 
 const mpLinkGenController = async (cart) => {
 
@@ -8,8 +7,6 @@ const mpLinkGenController = async (cart) => {
         //la idea es esto hacerlo con una variable de entorno pero por el momento dejame el de prueba
         access_token: process.env.MERCADOPAGO_KEY 
     });
-
-    const conversion = await Config.findOne()
 
     const URL = process.env.URL_BACK //aca va la URL del back deployado
 
@@ -22,7 +19,7 @@ const mpLinkGenController = async (cart) => {
             description: item.description,
             category_id: 'art',
             quantity: 1,
-            unit_price: item.price * conversion.dolarValue
+            unit_price: item.price
         })),
         payer: {
             address: {

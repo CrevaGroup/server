@@ -16,13 +16,7 @@ const getReviewController = async(id) => {
         return review;
     }
     else {
-        const reviews = await Review.findAll({include: [{
-            model: User,
-            as: "user"
-        },{
-            model: Service,
-            as: "service"
-        }]});
+        const reviews = await Review.findAll();
         if(!reviews.length) throw new Error('No se encuentran reviews');
         return reviews;
     }

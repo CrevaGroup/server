@@ -2,8 +2,7 @@ const getConfigController = require("../../Controllers/configControllers/getConf
 
 const getConfigHandler = async (req, res) => {
     try {
-        const userIp = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-        const config = await getConfigController(userIp)
+        const config = await getConfigController()
         res.status(200).json(config);
     } catch (error) {
         res.status(404).json(error.message)
