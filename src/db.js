@@ -1,6 +1,7 @@
 require("dotenv").config();
 const { Sequelize } = require("sequelize");
-const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME } = process.env;
+const { pg } = require('pg');
+const { POSTGRES_URL_NON_POOLING } = process.env;
 
 //Models
 const userModel = require('./Models/User')
@@ -10,12 +11,14 @@ const serviceModel = require('./Models/Service')
 const transactionModel = require('./Models/Transaction')
 const igPostModel = require('./Models/IGpost.js')
 const configModel = require('./Models/Config.js')
-const textBlogModel = require('./Models/TextBlog.js')
+const textBlogModel = require('./Models/textBlog.js')
 const keywordModel = require('./Models/Keyword.js')
 
 const sequelize = new Sequelize(
-    `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`,
-    { logging: false, native: false });
+    `${POSTGRES_URL_NON_POOLING}?sslmode=require`,  
+    { logging: false, native: false, dialect: "postgres", dialectModule: pg });
+
+//`postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}/${POSTGRES_DATABASE}?sslmode=require`,
 
 userModel(sequelize);
 typeModel(sequelize);

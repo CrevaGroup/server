@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "nodemon index.js",
+    "server": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm run server"
   },
@@ -26,6 +26,7 @@
     "pg": "^8.11.3",
     "pg-hstore": "^2.3.4",
     "sequelize": "^6.33.0",
+    "vercel": "^32.5.0",
     "stripe": "^14.2.0"
   }
 }

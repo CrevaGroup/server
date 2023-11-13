@@ -7,7 +7,7 @@ const stripeSuccessHandler = async (req, res) => {
     const response = await stripeSuccessController(session_id)
     
     if(response === "success"){
-      res.redirect(`${process.env.URL_CLIENT}/success`); //aca va la rita de la pestaña de succes de valen
+      res.redirect(`${process.env.URL_CLIENT}/Success`); //aca va la rita de la pestaña de succes de valen
     }
 
   } catch (err) {

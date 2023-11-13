@@ -1,6 +1,6 @@
-const { Type } = require('../db');
+const { Type } = require('../db.js');
 const { Op } = require('sequelize');
-const titleCase = require('../Utils/titleCase');
+const titleCase = require('../Utils/titleCase.js');
 
 const queryBuilder = (order, min, max, type) => {
     let query = {};
