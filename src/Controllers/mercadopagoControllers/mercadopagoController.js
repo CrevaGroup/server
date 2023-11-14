@@ -12,8 +12,8 @@ const mercadopagoController = async (paymentId) => {
     access_token: process.env.MERCADOPAGO_KEY 
 });
   const payment = await mercadopago.payment.findById(Number(paymentId));
-  
-  if (payment.body.status === "approved") {
+
+  if (payment?.body?.status === "approved") {
 
     const userId = payment.body.additional_info.payer.address.zip_code
 
@@ -39,6 +39,7 @@ const mercadopagoController = async (paymentId) => {
 
     return 'success'
   }
+  throw new Error('failure')
 }
 
 module.exports = mercadopagoController;
