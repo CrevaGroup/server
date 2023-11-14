@@ -1,7 +1,7 @@
 function htmlToString (name, service){
     
 const plantillas = [
-    {   name: "Confección de CV",
+    {   name: "Confección De CV",
         subject:"¡Gracias por tu compra del servicio 'Confección de curriculum'!",
         message: `<!DOCTYPE html>
     <html lang="en">
