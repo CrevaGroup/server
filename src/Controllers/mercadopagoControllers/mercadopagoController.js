@@ -1,11 +1,18 @@
 const { Transaction, Service, User } = require('../../db.js');
 const emailBuilder = require('../../Utils/emailBuilder.js');
 const transporter = require('../../nodemailer.js');
+require('dotenv').config();
 
 const mercadopago = require('mercadopago');
 
 const mercadopagoController = async (paymentId) => {
+
+  mercadopago.configure({
+    //la idea es esto hacerlo con una variable de entorno pero por el momento dejame el de prueba
+    access_token: process.env.MERCADOPAGO_KEY 
+});
   const payment = await mercadopago.payment.findById(Number(paymentId));
+  
   if (payment.body.status === "approved") {
 
     const userId = payment.body.additional_info.payer.address.zip_code
