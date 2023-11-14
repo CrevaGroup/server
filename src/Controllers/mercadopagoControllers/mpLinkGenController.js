@@ -22,7 +22,7 @@ const mpLinkGenController = async (cart) => {
             description: item.description,
             category_id: 'art',
             quantity: 1,
-            unit_price: item.price * conversion.dolarValue
+            unit_price: Math.round(item.price * conversion.dolarValue)
         })),
         payer: {
             address: {
