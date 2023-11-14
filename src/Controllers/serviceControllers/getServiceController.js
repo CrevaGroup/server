@@ -1,4 +1,4 @@
-const { Service } = require('../../db.js');
+const { Service, Type } = require('../../db.js');
 const queryBuilder = require('../../Utils/queryBuilder.js');
 
 const getServiceController = async ({ id, order, min, max, type }) => {
@@ -10,7 +10,6 @@ const getServiceController = async ({ id, order, min, max, type }) => {
     else {
         const query = queryBuilder(order, min, max, type);
         const services = await Service.findAll({ ...query });
-        if (!services.length) throw new Error ('No se encuentran servicios.');
         return services;
     }
 }
