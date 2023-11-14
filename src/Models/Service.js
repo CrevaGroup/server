@@ -16,9 +16,18 @@ module.exports = (sequelize)=>{
             type: DataTypes.TEXT,
             allowNull: false,
         },
+        items: {
+            type: DataTypes.ARRAY(DataTypes.STRING),
+        },
+        modalidad: {
+            type: DataTypes.ARRAY(DataTypes.STRING),
+        },
         price: {
             type: DataTypes.INTEGER,
             allowNull: false,
+        },
+        download: {
+            type: DataTypes.STRING,
         },
         photo: {
             type: DataTypes.STRING,
