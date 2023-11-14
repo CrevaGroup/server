@@ -13,7 +13,7 @@
     ],
     "crons": [
     {
-      "path": "/api/cron",
+      "path": "/src/Utils/dollarUpdate.js",
       "schedule": "0 13 * * *"
     }
   ]
