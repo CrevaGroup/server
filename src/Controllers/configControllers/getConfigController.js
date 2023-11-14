@@ -3,6 +3,8 @@ const {Config} = require('../../db.js')
 
 const getConfigController = async (ip) => {
 
+    console.log('hola osvaldito')
+
     const {data} = await axios.get(`https://ipinfo.io/${ip}`)
     
     const country = {country: data.country}
