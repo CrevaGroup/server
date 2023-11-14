@@ -3,9 +3,7 @@ const htmlToString = require("../Utils/PlantillasEmail/htmlString")
 
 const emailBuilder = (to, subject, message, name, service) => {
 
-    console.log('chau');
     const messageHtml = htmlToString(name, service)
-    console.log('hola');
 
 if(name && service && messageHtml !== undefined){
 
