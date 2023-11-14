@@ -8,15 +8,18 @@ const TOKEN = process.env.TOKEN_DOLLAR
 const dolarUpdate = async () => {
 
   try{  
+    console.log('hola')
   const {data} = await axios.get('https://api.estadisticasbcra.com/usd_of', {
       headers: {
           Authorization: `Bearer ${TOKEN}`
       },
   });
-
+    console.log(data)
   if(data.length > 0 ){
     
    const ultimaCotizacion = data[data.length - 1].v
+
+    console.log(ultimaCotizacion)
 
   if(typeof ultimaCotizacion === 'number'){
 
