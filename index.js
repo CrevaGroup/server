@@ -6,7 +6,7 @@ const PORT = process.env.PORT
 
 const startServer = async()=>{
     try {
-    await conn.sync({ force: false })
+    await conn.sync({ force: true })
     server.listen(PORT, () => {
     console.log(`Server raised in port: ${PORT}`);
     dolarUpdate()
