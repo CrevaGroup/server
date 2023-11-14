@@ -40,8 +40,4 @@ catch(error){
 }      
 }
 
-cron.schedule('0 0 * * *', () => {
-    dolarUpdate();
-}); 
-
 module.exports = dolarUpdate;
