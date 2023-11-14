@@ -1,5 +1,6 @@
 const  axios  = require('axios');
-const {Config} = require('../../db.js')
+const {Config} = require('../../db.js');
+const dollarUpdate = require('../../Utils/dollarUpdate.js');
 
 const getConfigController = async (ip) => {
 
