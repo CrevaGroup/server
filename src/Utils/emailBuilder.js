@@ -1,5 +1,5 @@
 const { SMTP_ADMINEMAIL } = process.env;
-const htmlToString = require("../Utils/PlantillasEmail/htmlString")
+const htmlToString = require("../Utils/PlantillasEmail/htmlString.js")
 
 const emailBuilder = (to, subject, message, name, service) => {
 

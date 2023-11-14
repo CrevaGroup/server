@@ -1,6 +1,6 @@
 const mercadopago = require('mercadopago');
 require('dotenv').config
-const {Config} = require('../../db')
+const {Config} = require('../../db.js')
 
 const mpLinkGenController = async (cart) => {
 

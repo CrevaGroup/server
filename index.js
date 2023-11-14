@@ -1,6 +1,6 @@
 const server = require("./src/server.js");
 const {conn} = require("./src/db.js");
-const dolarUpdate = require("./Utils/dollarUpdate");
+const dolarUpdate = require("./Utils/dollarUpdate.js");
 
 const PORT = process.env.PORT
 
