@@ -1,16 +1,9 @@
-const server = require("./src/server.js");
-const {conn} = require("./src/db.js")
+const server = require("./src/server");
+const {conn} = require("./src/db")
 
 const PORT = process.env.PORT
 
-const startServer = async()=>{
-    try {
-    await conn.sync({ force: false })
-    server.listen(PORT, () => {
+server.listen(PORT, () => {
+    conn.sync({ force: true }).then(()=>{console.log(`Connected to the DB: ${process.env.DB_NAME}`);})
     console.log(`Server raised in port: ${PORT}`);
   });
-    } catch (error) {
-        console.log(error.message)
-    }
-}
-startServer()
