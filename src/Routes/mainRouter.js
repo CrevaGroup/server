@@ -8,7 +8,6 @@ const transactionRouter = require('./transactionRouter.js');
 const igPostRouter = require('./igPostRouter.js');
 const configRouter = require('./configRouter.js');
 const textBlogRouter = require('./textBlogRouter.js');
-const keywordRouter = require('./keywordRouter');
 const stripeRouter = require('./stripeRouter.js');
 
 const mainRouter = Router();
@@ -22,6 +21,5 @@ mainRouter.use('/igpost', igPostRouter);
 mainRouter.use('/config', configRouter);
 mainRouter.use('/textblog', textBlogRouter);
 mainRouter.use('/stripe', stripeRouter);
-mainRouter.use('/keyword', keywordRouter);
 
 module.exports = mainRouter;

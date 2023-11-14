@@ -6,7 +6,6 @@ const TOKEN = process.env.TOKEN_DOLLAR
 
 
 const dolarUpdate = async () => {
-
   try{  
   const {data} = await axios.get('https://api.estadisticasbcra.com/usd_of', {
       headers: {

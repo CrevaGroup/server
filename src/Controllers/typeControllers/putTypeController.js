@@ -9,13 +9,6 @@ const putTypeController = async (typeInfo) => {
     if (typeInfo.name) type.name = typeInfo.name;
     await type.save();
 
-    await type.setKeywords([]);
-
-    for (let name of typeInfo.keywords) {
-        const keyword = await Keyword.findOne({ where: { name: titleCase(name) } });
-        await type.addKeyword(keyword);
-    };
-
     return type;
 }
 
