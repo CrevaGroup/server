@@ -10,11 +10,5 @@
             "src": "/(.*)", 
             "dest": "/index.js"
         }
-    ],
-    "crons": [
-    {
-      "path": "/src/Utils/dollarUpdate.js",
-      "schedule": "0 13 * * *"
-    }
-  ]
+    ]
 }
