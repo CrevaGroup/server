@@ -1,9 +1,23 @@
-const { Service } = require('../../db.js');
+const { Service, Review } = require('../../db.js');
 
 const deleteServiceController = async (id) => {
-    const service = await Service.destroy({ where: { id }});
-    if (!service) throw new Error ('No se encontró el servicio solicitado');
-    return 'Servicio eliminado correctamente.';
+
+    const serviceFind = await Service.findOne({where: {id}})
+    
+    if(serviceFind){
+    await Review.destroy({where: {serviceId: id}})
+    await Service.destroy({ where: { id }});
+    const serviceDeleted = await Service.findOne({where: {id}, paranoid:false})
+    return serviceDeleted;
+} else {
+    await Service.restore({where: {id}});
+    await Review.restore({where: {serviceId: id}});
+    const restoredService = await Service.findOne({where: {id}});
+    return restoredService
+}
+
+
+
 }
 
 module.exports = deleteServiceController;
