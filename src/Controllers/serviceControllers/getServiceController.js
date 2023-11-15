@@ -9,7 +9,7 @@ const getServiceController = async ({ id, order, min, max, type }) => {
     }
     else {
         const query = queryBuilder(order, min, max, type);
-        const services = await Service.findAll({ ...query });
+        const services = await Service.findAll({ ...query, paranoid:false });
         return services;
     }
 }
