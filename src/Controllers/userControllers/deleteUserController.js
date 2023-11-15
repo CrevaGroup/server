@@ -20,7 +20,7 @@ const deleteUserController = async (id) => {
     }
     else{
         const userRestored = await User.restore({where:{id}});
-        await Review.restore({where: {userId: userRestored.id}});
+        await Review.restore({where: {userId: id}});
          if(userRestored !== 1) throw new Error("Usuario no encontrado");
          const restoredUser = await User.findOne({where: {id}}) 
          return restoredUser;
