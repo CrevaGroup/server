@@ -42,7 +42,7 @@ const getUserController = async (id) => {
             include:[{
                 model: Service
             }]
-        }]
+        }], paranoid: false
     })
 
     return users
