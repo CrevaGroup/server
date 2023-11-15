@@ -1,5 +1,6 @@
 const { User, Review } = require('../../db.js');
 const emailBuilder = require('../../Utils/emailBuilder.js');
+const transporter = require('../../nodemailer.js');
 
 const deleteUserController = async (id) => {
 
