@@ -15,13 +15,15 @@ const deleteUserController = async (id) => {
         await Review.destroy({where: {id: review.id}})
     }
     await User.destroy({ where: { id }});
-    return 'Usuario eliminado correctamente.';
+    const deletedUser = await User.findOne({where: {id}, paranoid: false})
+    return deletedUser;
     }
     else{
         const userRestored = await User.restore({where:{id}});
         await Review.restore({where: {userId: userRestored.id}});
-         if(userRestored !== 1) throw new Error("Usuario no encontrado") 
-         return 'Usuario restaurado correctamente.';
+         if(userRestored !== 1) throw new Error("Usuario no encontrado");
+         const restoredUser = await User.findOne({where: {id}}) 
+         return restoredUser;
     }
 
 
