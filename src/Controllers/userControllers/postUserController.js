@@ -15,7 +15,7 @@ const postUserController = async (userInfo) => {
 
         const user = await User.create({ ...userInfo });
 
-        transporter.sendMail(emailBuilder(user.email, 'Bienvenid@', `Te damos la bienvenida a Creva, ${user.fullName}.`));
+        transporter.sendMail(emailBuilder(user.email, 'Bienvenid@', `Te damos la bienvenida a Creva, ${user.fullName}.`, user.fullName));
 
         return `Registro exitoso. Bienvenid@ ${user.fullName}!! Se ha enviado un email para validar su cuenta.`;
     }
