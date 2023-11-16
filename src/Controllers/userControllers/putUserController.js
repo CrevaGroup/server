@@ -15,7 +15,7 @@ const putUserController = async (userInfo) => {
         }] });
     if (!user) throw new Error ('No se encontró el usuario.');
 
-    for (property in userInfo ) {
+    for (property in userInfo) {
         if (userInfo[property] && user.dataValues.hasOwnProperty(property))
         user[property] = userInfo[property];
     }
