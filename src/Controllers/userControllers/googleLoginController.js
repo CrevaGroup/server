@@ -32,7 +32,7 @@ const googleLoginController = async (userInfo) => {
 
         const [user, created] = await User.findOrCreate({ where: { id: userInfo.id }, defaults: { ...userInfo } });
 
-        if (created) transporter.sendMail(emailBuilder(user.email, 'Bienvenid@', `Te damos la bienvenida a Creva, ${user.fullName}.`));
+        if (created) transporter.sendMail(emailBuilder(user.email, 'Bienvenid@', `Te damos la bienvenida a Creva, ${user.fullName}.`, user.fullName));
 
         const newUser = await User.findOne({
             where: { id: user.id },
