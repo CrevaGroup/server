@@ -1,4 +1,4 @@
-const { User } = require('../../db.js');
+const { User, Transaction, Review, Service } = require('../../db.js');
 
 const putUserController = async (userInfo) => {
     console.log(userInfo);
@@ -14,13 +14,14 @@ const putUserController = async (userInfo) => {
             model: Review,
             as: "reviews"
         }] });
+    console.log('despues de buscar el user:', user);
     if (!user) throw new Error ('No se encontró el usuario.');
 
     for (property in userInfo ) {
         if (userInfo[property] && user.dataValues.hasOwnProperty(property))
         user[property] = userInfo[property];
     }
-
+    console.log("despues de cambiar las props", user);
     await user.save();
 
     if (!user.age) return {
