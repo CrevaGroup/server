@@ -1,6 +1,7 @@
 const { User } = require('../../db.js');
 
 const putUserController = async (userInfo) => {
+    console.log(userInfo);
     const user = await User.findOne({ where: { id: userInfo.id }, include: [
         {
             model: Transaction,
